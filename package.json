@@ -1,0 +1,43 @@
+{
+  "name": "claude-session-search",
+  "displayName": "Claude Session Search",
+  "description": "Search local Claude Code session history across all projects. Fully local, read-only, no LLM calls.",
+  "version": "0.1.0",
+  "publisher": "local",
+  "license": "MIT",
+  "private": true,
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "claudeSessionSearch.open",
+        "title": "Claude Session Search: 搜索历史对话",
+        "icon": "$(search)"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "typecheck": "tsc -p ./ --noEmit",
+    "pretest": "npm run compile",
+    "test": "node --test out/test/",
+    "test:e2e": "npm run compile && node out/e2e/runTest.js",
+    "package": "npm run compile && npx --yes @vscode/vsce@3.2.1 package --allow-missing-repository --skip-license"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "~1.85.0",
+    "@vscode/test-electron": "^2.4.1",
+    "typescript": "^5.4.0"
+  }
+}

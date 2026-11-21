@@ -1,0 +1,11 @@
+.vscode/**
+src/**
+test/**
+out/test/**
+e2e/**
+out/e2e/**
+.vscode-test/**
+node_modules/**
+**/*.map
+tsconfig.json
+p0-prd.md

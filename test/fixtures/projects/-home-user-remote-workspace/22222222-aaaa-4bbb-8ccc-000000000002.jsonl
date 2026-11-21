@@ -1,0 +1,6 @@
+{"type":"user","message":{"role":"user","content":"Windows 上怎么配置 SSH 公钥？"},"uuid":"r-1","timestamp":"2025-11-18T02:36:00.000Z","cwd":"C:\\Users\\dev\\remote-workspace","sessionId":"22222222-aaaa-4bbb-8ccc-000000000002"}
+{"type":"assistant","message":{"id":"msg_R1","role":"assistant","content":[{"type":"text","text":"可以使用 PowerShell 的 Add-Content 把公钥写入 authorized_keys 文件。"}]},"uuid":"r-2","timestamp":"2025-11-18T02:36:30.000Z","cwd":"C:\\Users\\dev\\remote-workspace","sessionId":"22222222-aaaa-4bbb-8ccc-000000000002"}
+{"type":"user","message":{"role":"user","content":"<command-name>/model</command-name>\n<command-message>model</command-message>\n<command-args>opus</command-args>"},"uuid":"r-3","timestamp":"2025-11-18T02:37:00.000Z","sessionId":"22222222-aaaa-4bbb-8ccc-000000000002"}
+{"type":"user","message":{"role":"user","content":"same text twice"},"uuid":"r-4","timestamp":"2025-11-18T02:38:00.000Z","sessionId":"22222222-aaaa-4bbb-8ccc-000000000002"}
+{"type":"assistant","message":{"id":"msg_R2","role":"assistant","content":"plain string reply"},"uuid":"r-5","sessionId":"22222222-aaaa-4bbb-8ccc-000000000002"}
+{"type":"user","message":{"role":"user","content":"same text twice"},"uuid":"r-6","timestamp":"2025-11-18T02:39:00.000Z","sessionId":"22222222-aaaa-4bbb-8ccc-000000000002"}

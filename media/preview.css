@@ -1,0 +1,140 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0 0 40vh;
+  font-family: var(--vscode-font-family);
+  font-size: var(--vscode-font-size);
+  line-height: 1.6;
+  color: var(--vscode-foreground);
+  background: var(--vscode-editor-background);
+}
+
+code, pre {
+  font-family: var(--vscode-editor-font-family);
+  font-size: var(--vscode-editor-font-size, 13px);
+}
+
+.session-info {
+  padding: 16px 24px 12px;
+  border-bottom: 1px solid var(--vscode-panel-border, rgba(128, 128, 128, 0.3));
+}
+.session-info h1 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+.session-info dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 2px 12px;
+  margin: 0;
+  font-size: 12px;
+}
+.session-info dt { color: var(--vscode-descriptionForeground); }
+.session-info dd { margin: 0; word-break: break-all; }
+
+.notice {
+  margin-top: 10px;
+  padding: 6px 10px;
+  color: var(--vscode-editorWarning-foreground);
+  border: 1px solid var(--vscode-editorWarning-foreground);
+  border-radius: 3px;
+}
+
+.messages { padding: 12px 24px; max-width: 960px; }
+
+.msg {
+  margin: 12px 0;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border-left: 3px solid transparent;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 120px;
+}
+.msg.user {
+  background: var(--vscode-textBlockQuote-background, rgba(128, 128, 128, 0.1));
+  border-left-color: var(--vscode-textLink-foreground);
+}
+.msg.assistant {
+  border-left-color: var(--vscode-charts-purple, var(--vscode-descriptionForeground));
+}
+.msg.target {
+  outline: 2px solid var(--vscode-focusBorder);
+  outline-offset: 2px;
+  background: var(--vscode-editor-findMatchHighlightBackground, rgba(234, 92, 0, 0.15));
+  content-visibility: visible;
+}
+
+.msg-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: var(--vscode-descriptionForeground);
+}
+.msg-head .role { font-weight: 600; color: var(--vscode-foreground); }
+.msg.user .msg-head .role { color: var(--vscode-textLink-foreground); }
+.msg-head .copy { margin-left: auto; visibility: hidden; }
+.msg:hover .msg-head .copy, .msg-head .copy:focus { visibility: visible; }
+
+button.copy {
+  padding: 1px 8px;
+  font-family: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  color: var(--vscode-button-secondaryForeground);
+  background: var(--vscode-button-secondaryBackground);
+  border: none;
+  border-radius: 2px;
+}
+button.copy:hover { background: var(--vscode-button-secondaryHoverBackground); }
+
+.msg-body { word-break: break-word; }
+.msg-body > :first-child { margin-top: 4px; }
+.msg-body > :last-child { margin-bottom: 0; }
+.msg-body p { margin: 6px 0; }
+.msg-body h1, .msg-body h2, .msg-body h3, .msg-body h4, .msg-body h5, .msg-body h6 {
+  margin: 12px 0 6px;
+  font-size: 1.05em;
+}
+.msg-body h1 { font-size: 1.25em; }
+.msg-body h2 { font-size: 1.15em; }
+.msg-body ul, .msg-body ol { margin: 6px 0; padding-left: 24px; }
+.msg-body blockquote {
+  margin: 6px 0;
+  padding: 2px 12px;
+  border-left: 3px solid var(--vscode-textBlockQuote-border, rgba(128, 128, 128, 0.5));
+  color: var(--vscode-descriptionForeground);
+}
+.msg-body hr { border: none; border-top: 1px solid var(--vscode-panel-border, rgba(128, 128, 128, 0.3)); }
+.msg-body a { color: var(--vscode-textLink-foreground); }
+.msg-body :not(pre) > code {
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: var(--vscode-textCodeBlock-background, rgba(128, 128, 128, 0.15));
+}
+
+.code-block {
+  margin: 8px 0;
+  border-radius: 4px;
+  background: var(--vscode-textCodeBlock-background, rgba(128, 128, 128, 0.15));
+  overflow: hidden;
+}
+.code-lang {
+  padding: 2px 10px;
+  font-size: 11px;
+  color: var(--vscode-descriptionForeground);
+  border-bottom: 1px solid var(--vscode-panel-border, rgba(128, 128, 128, 0.2));
+}
+.code-block pre {
+  margin: 0;
+  padding: 8px 10px;
+  overflow-x: auto;
+  white-space: pre;
+}
+
+::highlight(query) {
+  background-color: var(--vscode-editor-findMatchBackground, rgba(234, 92, 0, 0.6));
+  color: inherit;
+}
