@@ -111,11 +111,22 @@ button {
 }
 
 .result-meta {
+  display: flex;
+  align-items: baseline;
   margin-top: 2px;
   font-size: 12px;
   color: var(--vscode-descriptionForeground);
+  white-space: nowrap;
 }
+.result-meta > span { flex-shrink: 0; }
 .result-meta .sep { margin: 0 6px; }
+.result-meta .cwd {
+  flex-shrink: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--vscode-editor-font-family);
+}
 .result-meta .role.user { color: var(--vscode-textLink-foreground); }
 .result-meta .role.assistant { color: var(--vscode-charts-purple, var(--vscode-descriptionForeground)); }
 

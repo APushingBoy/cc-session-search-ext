@@ -152,6 +152,12 @@
     meta.appendChild(textEl('span', r.projectName, 'project'));
     meta.appendChild(textEl('span', '·', 'sep'));
     meta.appendChild(textEl('span', r.role === 'user' ? '用户提问' : 'Claude 回复', 'role ' + r.role));
+    if (r.cwd) {
+      meta.appendChild(textEl('span', '·', 'sep'));
+      const cwd = textEl('span', r.cwd, 'cwd');
+      cwd.title = r.cwd; // full path on hover
+      meta.appendChild(cwd);
+    }
     item.appendChild(meta);
 
     const snip = document.createElement('div');

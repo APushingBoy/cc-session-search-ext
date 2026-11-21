@@ -21,6 +21,8 @@ export interface SearchResult {
   filePath: string;
   sessionId: string;
   projectName: string;
+  /** Original working directory of the session, if recorded. */
+  cwd?: string;
   title?: string;
   messageKey: string;
   messageIndex: number;
@@ -106,6 +108,7 @@ export function searchSessions(sessions: ParsedSession[], options: SearchOptions
       filePath: session.filePath,
       sessionId: session.sessionId,
       projectName: session.projectName,
+      cwd: session.cwd,
       title: session.title,
       messageKey: msg.key,
       messageIndex: msg.index,

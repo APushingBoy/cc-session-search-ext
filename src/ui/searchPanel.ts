@@ -167,6 +167,7 @@ export class SearchPanel {
         line: r.line,
         role: r.role,
         projectName: r.projectName,
+        cwd: r.cwd ?? '',
         title: r.title ?? r.sessionId,
         time: formatTime(r.time, now),
         snippet: r.snippet,

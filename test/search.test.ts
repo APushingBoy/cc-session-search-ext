@@ -72,6 +72,7 @@ test('results are newest first and carry message locators', async () => {
   assert.deepEqual(times, [...times].sort((a, b) => b - a));
   const top = r.results[0];
   const session = store.getSession(top.filePath)!;
+  assert.equal(top.cwd, '/home/user/gateway-agent');
   const idx = findTargetIndex(session, top.messageKey, top.line);
   assert.equal(idx, top.messageIndex);
   assert.ok(session.messages[idx].text.toLowerCase().includes('ssh'));
